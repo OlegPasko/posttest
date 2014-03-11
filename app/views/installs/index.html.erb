@@ -2,4 +2,4 @@
 
 <h1>Log</h1>
 <% file = File.join(Rails.root,"/log/#{Rails.env}.log") %>
-<%= raw(IO.readlines(file)[-50..-1].reject {|el| el == '/n'}.join('<br>')) %>
+<%= raw(IO.readlines(file)[-50..-1].reject {|el| el == '/n'}.join('<br>')) if IO.readlines(file).any? %>
